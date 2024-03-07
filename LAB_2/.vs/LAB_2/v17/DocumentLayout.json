@@ -1,0 +1,68 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Studia\\Semestr 4\\Programowanie_wizualne_dla_bioinformatyk\u00F3w\\visual_programming_lab\\LAB_2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5543038E-E3ED-402D-9C4C-3B85EFE3D8A3}|LAB_2.csproj|d:\\studia\\semestr 4\\programowanie_wizualne_dla_bioinformatyk\u00F3w\\visual_programming_lab\\lab_2\\mainproductsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5543038E-E3ED-402D-9C4C-3B85EFE3D8A3}|LAB_2.csproj|solutionrelative:mainproductsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5543038E-E3ED-402D-9C4C-3B85EFE3D8A3}|LAB_2.csproj|d:\\studia\\semestr 4\\programowanie_wizualne_dla_bioinformatyk\u00F3w\\visual_programming_lab\\lab_2\\controlpanelform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5543038E-E3ED-402D-9C4C-3B85EFE3D8A3}|LAB_2.csproj|solutionrelative:controlpanelform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5543038E-E3ED-402D-9C4C-3B85EFE3D8A3}|LAB_2.csproj|d:\\studia\\semestr 4\\programowanie_wizualne_dla_bioinformatyk\u00F3w\\visual_programming_lab\\lab_2\\controlpanelform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5543038E-E3ED-402D-9C4C-3B85EFE3D8A3}|LAB_2.csproj|solutionrelative:controlpanelform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ControlPanelForm.cs",
+              "DocumentMoniker": "D:\\Studia\\Semestr 4\\Programowanie_wizualne_dla_bioinformatyk\u00F3w\\visual_programming_lab\\LAB_2\\ControlPanelForm.cs",
+              "RelativeDocumentMoniker": "ControlPanelForm.cs",
+              "ToolTip": "D:\\Studia\\Semestr 4\\Programowanie_wizualne_dla_bioinformatyk\u00F3w\\visual_programming_lab\\LAB_2\\ControlPanelForm.cs",
+              "RelativeToolTip": "ControlPanelForm.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAADwvykAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T00:37:08.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ControlPanelForm.cs [Projekt]",
+              "DocumentMoniker": "D:\\Studia\\Semestr 4\\Programowanie_wizualne_dla_bioinformatyk\u00F3w\\visual_programming_lab\\LAB_2\\ControlPanelForm.cs",
+              "RelativeDocumentMoniker": "ControlPanelForm.cs",
+              "ToolTip": "D:\\Studia\\Semestr 4\\Programowanie_wizualne_dla_bioinformatyk\u00F3w\\visual_programming_lab\\LAB_2\\ControlPanelForm.cs [Projekt]",
+              "RelativeToolTip": "ControlPanelForm.cs [Projekt]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T00:27:24.463Z",
+              "EditorCaption": " [Projekt]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainProductsForm.cs [Projekt]",
+              "DocumentMoniker": "D:\\Studia\\Semestr 4\\Programowanie_wizualne_dla_bioinformatyk\u00F3w\\visual_programming_lab\\LAB_2\\MainProductsForm.cs",
+              "RelativeDocumentMoniker": "MainProductsForm.cs",
+              "ToolTip": "D:\\Studia\\Semestr 4\\Programowanie_wizualne_dla_bioinformatyk\u00F3w\\visual_programming_lab\\LAB_2\\MainProductsForm.cs [Projekt]",
+              "RelativeToolTip": "MainProductsForm.cs [Projekt]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T00:25:48.684Z",
+              "EditorCaption": " [Projekt]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
