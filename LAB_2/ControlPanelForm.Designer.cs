@@ -30,8 +30,10 @@
         {
             button1 = new Button();
             button2 = new Button();
-            button3 = new Button();
             label1 = new Label();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
             SuspendLayout();
             // 
             // button1
@@ -52,34 +54,48 @@
             button2.TabIndex = 1;
             button2.Text = "Produkty Dodatkowe";
             button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(443, 46);
-            button3.Name = "button3";
-            button3.Size = new Size(148, 34);
-            button3.TabIndex = 2;
-            button3.Text = "Urządzenia Peryferyjne";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            button2.Click += button2_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(47, 88);
+            label1.Location = new Point(432, 56);
             label1.Name = "label1";
             label1.Size = new Size(35, 15);
             label1.TabIndex = 3;
             label1.Text = "Total:";
             label1.Click += label1_Click;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(99, 86);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 4;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(272, 85);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(100, 23);
+            textBox2.TabIndex = 5;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(432, 86);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(100, 23);
+            textBox3.TabIndex = 6;
+            // 
             // ControlPanelForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(661, 156);
+            Controls.Add(textBox3);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
             Controls.Add(label1);
-            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
@@ -95,7 +111,9 @@
 
         private Button button1;
         private Button button2;
-        private Button button3;
         private Label label1;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private TextBox textBox3;
     }
 }

@@ -40,7 +40,13 @@ namespace LAB_2
         private void button1_Click(object sender, EventArgs e)
         {
             MainProductsForm mainProductsForm = new MainProductsForm();
-            mainProductsForm.ShowDialog();
+            mainProductsForm.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AdditionalProductsForm additionalProductsForm = new AdditionalProductsForm();
+            additionalProductsForm.Show();
         }
     }
 }

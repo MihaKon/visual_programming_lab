@@ -16,5 +16,35 @@ namespace LAB_2
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listV(object sender, ItemCheckedEventArgs e)
+        {
+            int total_price = 0;
+            foreach (ListViewItem item in listView1.CheckedItems)
+            {
+                total_price += Int32.Parse(item.SubItems[1].Text);
+            }
+            textBox2.Text = total_price.ToString();
+        }
+
+        private void ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            int total_price = 0;
+            foreach (ListViewItem item in listView2.CheckedItems)
+            {
+                total_price += Int32.Parse(item.SubItems[1].Text);
+            }
+            textBox3.Text = total_price.ToString()
+        }
     }
 }

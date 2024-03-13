@@ -31,5 +31,39 @@ namespace LAB_2
         {
 
         }
+
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView2.SelectedItems.Count > 0)
+            {
+                textBox4.Text = listView2.SelectedItems[0].Text;
+                textBox3.Text = listView2.SelectedItems[0].SubItems[1].Text;
+            }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                textBox1.Text = listView1.SelectedItems[0].Text;
+                textBox2.Text = listView1.SelectedItems[0].SubItems[1].Text;
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
