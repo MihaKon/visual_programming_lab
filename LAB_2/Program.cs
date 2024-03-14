@@ -1,12 +1,11 @@
-namespace LAB_2
+namespace LAB_2;
+
+static class Program
 {
-    internal static class Program
+    [STAThread]
+    static void Main()
     {
-        [STAThread]
-        static void Main()
-        {
-            ApplicationConfiguration.Initialize();
-            Application.Run(new LogIn());
-        }
-    }
+        ApplicationConfiguration.Initialize();
+        Application.Run(new SummaryForm());
+    }    
 }
