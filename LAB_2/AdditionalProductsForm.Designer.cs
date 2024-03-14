@@ -71,7 +71,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(108, 23);
             textBox3.TabIndex = 24;
-            textBox3.TextChanged += textBox3_TextChanged;
+            textBox3.Text = "0";
             // 
             // label5
             // 
@@ -88,6 +88,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(108, 23);
             textBox2.TabIndex = 19;
+            textBox2.Text = "0";
             // 
             // listView1
             // 

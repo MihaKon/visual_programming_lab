@@ -38,6 +38,7 @@ namespace LAB_2
             {
                 textBox4.Text = listView2.SelectedItems[0].Text;
                 textBox3.Text = listView2.SelectedItems[0].SubItems[1].Text;
+                priceChanged();
             }
         }
 
@@ -47,23 +48,19 @@ namespace LAB_2
             {
                 textBox1.Text = listView1.SelectedItems[0].Text;
                 textBox2.Text = listView1.SelectedItems[0].SubItems[1].Text;
+                priceChanged();
             }
 
+        }
+        private void priceChanged()
+        {
+            int total = Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text);
+            ControlPanelForm.instance.TextBox.Text = total.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

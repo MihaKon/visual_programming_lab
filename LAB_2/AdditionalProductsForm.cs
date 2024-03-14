@@ -22,10 +22,6 @@ namespace LAB_2
             this.Hide();
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void listV(object sender, ItemCheckedEventArgs e)
         {
@@ -35,6 +31,8 @@ namespace LAB_2
                 total_price += Int32.Parse(item.SubItems[1].Text);
             }
             textBox2.Text = total_price.ToString();
+
+            PriceChanged();
         }
 
         private void ItemChecked(object sender, ItemCheckedEventArgs e)
@@ -44,7 +42,15 @@ namespace LAB_2
             {
                 total_price += Int32.Parse(item.SubItems[1].Text);
             }
-            textBox3.Text = total_price.ToString()
+            textBox3.Text = total_price.ToString();
+
+            PriceChanged();
+        }
+
+        private void PriceChanged()
+        {
+            int total = Int32.Parse(textBox3.Text) + Int32.Parse(textBox2.Text);
+            ControlPanelForm.instance.TextBox2.Text = total.ToString();
         }
     }
 }

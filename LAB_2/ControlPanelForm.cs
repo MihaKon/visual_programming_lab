@@ -10,26 +10,18 @@ using System.Windows.Forms;
 
 namespace LAB_2
 {
+
     public partial class ControlPanelForm : Form
     {
+        public static ControlPanelForm instance;
+        public TextBox TextBox, TextBox2;
+        public int necesseryProducts, additionalProducts;
         public ControlPanelForm()
         {
             InitializeComponent();
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            instance = this;
+            TextBox = textBox1;
+            TextBox2 = textBox2;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -47,6 +39,21 @@ namespace LAB_2
         {
             AdditionalProductsForm additionalProductsForm = new AdditionalProductsForm();
             additionalProductsForm.Show();
+        }
+
+        private int calcTotal()
+        {
+            return Int32.Parse(textBox1.Text) + Int32.Parse(textBox2.Text);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            textBox3.Text = calcTotal().ToString();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textBox3.Text = calcTotal().ToString();
         }
     }
 }

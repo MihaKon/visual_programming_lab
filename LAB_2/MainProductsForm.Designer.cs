@@ -110,6 +110,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(108, 23);
             textBox2.TabIndex = 5;
+            textBox2.Text = "0";
             // 
             // label5
             // 
@@ -135,6 +136,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(108, 23);
             textBox3.TabIndex = 10;
+            textBox3.Text = "0";
             // 
             // listView2
             // 
@@ -169,7 +171,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(263, 23);
             textBox1.TabIndex = 4;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label4
             // 
