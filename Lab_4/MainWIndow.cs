@@ -40,6 +40,13 @@ public partial class MainWindow : Form
         upsideDown.Size = new Size(100, 50);
         upsideDown.Click += new EventHandler(upsideDown_Click);
         Controls.Add(upsideDown);
+
+        Button onlyGreen = new Button();
+        onlyGreen.Text = "Only Green";
+        onlyGreen.Location = new Point(10, 250);
+        onlyGreen.Size = new Size(100, 50);
+        onlyGreen.Click += new EventHandler(onlyGreen_Click);
+        Controls.Add(onlyGreen);
     } 
 
     private void loadImage_Click(object sender, EventArgs e)
@@ -84,6 +91,22 @@ public partial class MainWindow : Form
         {
             pictureBox.Image.RotateFlip(RotateFlipType.RotateNoneFlipY);
             pictureBox.Invalidate();
+        }
+    }
+    private void onlyGreen_Click(object sender, EventArgs e)
+    {
+        if (pictureBox.Image != null)
+        {
+            Bitmap bitmap = new Bitmap(pictureBox.Image);
+            for (int i = 0; i < bitmap.Width; i++)
+            {
+                for (int j = 0; j < bitmap.Height; j++)
+                {
+                    Color color = bitmap.GetPixel(i, j);
+                    bitmap.SetPixel(i, j, Color.FromArgb(0, color.G, 0));
+                }
+            }
+            pictureBox.Image = bitmap;
         }
     }
 }
