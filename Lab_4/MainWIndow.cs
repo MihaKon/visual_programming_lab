@@ -103,7 +103,10 @@ public partial class MainWindow : Form
                 for (int j = 0; j < bitmap.Height; j++)
                 {
                     Color color = bitmap.GetPixel(i, j);
-                    bitmap.SetPixel(i, j, Color.FromArgb(0, color.G, 0));
+                    if (color.G > color.R && color.G > color.B)
+                        bitmap.SetPixel(i, j, Color.FromArgb(0, color.G, 0));
+                    else
+                        bitmap.SetPixel(i, j, Color.FromArgb(0, 0, 0));
                 }
             }
             pictureBox.Image = bitmap;
