@@ -3,6 +3,7 @@ namespace Lab_4;
 public partial class MainWindow : Form
 {
     private PictureBox pictureBox;
+    private RadioButton radioButton90, radioButton180, radioButton270;
     public MainWindow()
     {
         InitializeComponent();
@@ -13,20 +14,39 @@ public partial class MainWindow : Form
         pictureBox.BackColor = Color.Gray;
         Controls.Add(pictureBox);
 
-        Button loadImage = new Button();
-        loadImage.Text = "Load Image";
-        loadImage.Location = new Point(10, 10);
-        loadImage.Size = new Size(100, 50);
-        loadImage.Click += new EventHandler(loadImage_Click);
-        Controls.Add(loadImage);
-        
+        this.radioButton90 = new RadioButton();
+        radioButton90.Checked = true;
+        radioButton90.Text = "90";
+        radioButton90.Location = new Point(540, 10);
+        radioButton90.Size = new Size(100, 50);
+        Controls.Add(radioButton90);
+
+        this.radioButton180 = new RadioButton();
+        radioButton180.Text = "180";
+        radioButton180.Location = new Point(540, 60);
+        radioButton180.Size = new Size(100, 50);
+        Controls.Add(radioButton180);
+
+        this.radioButton270 = new RadioButton();
+        radioButton270.Text = "270";
+        radioButton270.Location = new Point(540, 110);
+        radioButton270.Size = new Size(100, 50);
+        Controls.Add(radioButton270);
+
         Button rotateImage = new Button();
         rotateImage.Text = "Rotate Image";
-        rotateImage.Location = new Point(10, 70);
+        rotateImage.Location = new Point(10, 10);
         rotateImage.Size = new Size(100, 50);
         rotateImage.Click += new EventHandler(rotateImage_Click);
         Controls.Add(rotateImage);
 
+        Button onlyGreen = new Button();
+        onlyGreen.Text = "Only Green";
+        onlyGreen.Location = new Point(10, 70);
+        onlyGreen.Size = new Size(100, 50);
+        onlyGreen.Click += new EventHandler(onlyGreen_Click);
+        Controls.Add(onlyGreen);
+        
         Button InvertColors = new Button();
         InvertColors.Text = "Invert Colors";
         InvertColors.Location = new Point(10, 130);
@@ -41,12 +61,12 @@ public partial class MainWindow : Form
         upsideDown.Click += new EventHandler(upsideDown_Click);
         Controls.Add(upsideDown);
 
-        Button onlyGreen = new Button();
-        onlyGreen.Text = "Only Green";
-        onlyGreen.Location = new Point(10, 250);
-        onlyGreen.Size = new Size(100, 50);
-        onlyGreen.Click += new EventHandler(onlyGreen_Click);
-        Controls.Add(onlyGreen);
+        Button loadImage = new Button();
+        loadImage.Text = "Load Image";
+        loadImage.Location = new Point(10, 250);
+        loadImage.Size = new Size(100, 50);
+        loadImage.Click += new EventHandler(loadImage_Click);
+        Controls.Add(loadImage);
     } 
 
     private void loadImage_Click(object sender, EventArgs e)
@@ -63,7 +83,20 @@ public partial class MainWindow : Form
     {
         if (pictureBox.Image != null)
         {
-            pictureBox.Image.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            int degrees = 0;
+            if (radioButton90.Checked)
+            {
+                pictureBox.Image.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            }
+            else if (radioButton180.Checked)
+            {
+                pictureBox.Image.RotateFlip(RotateFlipType.Rotate180FlipNone);
+            }
+            else if (radioButton270.Checked)
+            {
+                pictureBox.Image.RotateFlip(RotateFlipType.Rotate270FlipNone);
+            }
+
             pictureBox.Invalidate();
         }
     }
