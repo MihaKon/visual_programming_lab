@@ -31,9 +31,9 @@ public partial class MainWindow : Window
             }
         }
 
-        a.Text = letterCount.ContainsKey('a') ? letterCount['a'].ToString() : "0";
-        g.Text = letterCount.ContainsKey('g') ? letterCount['g'].ToString() : "0";
-        c.Text = letterCount.ContainsKey('c') ? letterCount['c'].ToString() : "0";
-        t.Text = letterCount.ContainsKey('t') ? letterCount['t'].ToString() : "0";
+        a.Text = letterCount.ContainsKey('a') ? "A: " + letterCount['a'].ToString() : "A: 0";
+        g.Text = letterCount.ContainsKey('g') ? "G: " + letterCount['g'].ToString() : "G: 0";
+        c.Text = letterCount.ContainsKey('c') ? "C:" + letterCount['c'].ToString() : "C: 0";
+        t.Text = letterCount.ContainsKey('t') ? "T: " + letterCount['t'].ToString() : "T: 0";
     }
 }
