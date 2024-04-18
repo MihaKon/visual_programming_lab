@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="LAB_7.MainWindow"
+        Title="LAB_7">
+       <StackPanel>
+    <Border Margin="5" 
+      CornerRadius="10"
+      Background="LightBlue">
+      <TextBlock Margin="5"
+         FontSize="24" 
+         HorizontalAlignment="Center"
+         Text="Sequence Counter">
+      </TextBlock>
+    </Border>
+    <StackPanel>
+        <TextBox Name="seq"  Width="400" HorizontalAlignment="Center"/>
+    </StackPanel>
+        <Button HorizontalAlignment="Center" Click="Calculate_Click">Calculate</Button>
+    <StackPanel>
+        <TextBlock Name="a" FontSize="24" HorizontalAlignment="Center"/>
+        <TextBlock Name="g" FontSize="24" HorizontalAlignment="Center"/>
+        <TextBlock Name="c" FontSize="24" HorizontalAlignment="Center"/>
+        <TextBlock Name="t" FontSize="24" HorizontalAlignment="Center"/>
+    </StackPanel>
+  </StackPanel> 
+</Window>
