@@ -21,6 +21,7 @@
         <Button HorizontalAlignment="Center" Click="Calculate_Click">Calculate</Button>
     <StackPanel>
         <TextBlock Name="result" FontSize="24" HorizontalAlignment="Center"/>
+        <TextBlock Name="resultValue" FontSize="24" HorizontalAlignment="Center"/>
         <TextBlock Name="a" FontSize="24" HorizontalAlignment="Center"/>
         <TextBlock Name="g" FontSize="24" HorizontalAlignment="Center"/>
         <TextBlock Name="c" FontSize="24" HorizontalAlignment="Center"/>

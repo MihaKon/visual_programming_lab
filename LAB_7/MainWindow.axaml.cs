@@ -14,7 +14,7 @@ public partial class MainWindow : Window
     public void Calculate_Click(object source, RoutedEventArgs e)
     {
         var text = seq.Text.ToLower();
-
+        var count = 0;
         result.Text = "Result: ";
         for (int i = 0; i < text.Length; i=i+4)
         {
@@ -22,11 +22,13 @@ public partial class MainWindow : Window
             {
                 string substring = text.Substring(i, 4);
                 result.Text += substring + ", ";
+                count++;
             }
             else { 
                 result.Text += text.Substring(i, text.Length - i) + ", ";
             }
         }
+        resulValue.Text = "Count: " + count.ToString();
         Dictionary<char, int> letterCount = new Dictionary<char, int>();
 
         foreach (char letter in text)
