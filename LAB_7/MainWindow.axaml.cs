@@ -28,7 +28,7 @@ public partial class MainWindow : Window
                 result.Text += text.Substring(i, text.Length - i) + ", ";
             }
         }
-        resulValue.Text = "Count: " + count.ToString();
+        resultValue.Text = "Count: " + count.ToString();
         Dictionary<char, int> letterCount = new Dictionary<char, int>();
 
         foreach (char letter in text)
