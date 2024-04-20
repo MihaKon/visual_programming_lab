@@ -1,12 +1,17 @@
 using System;
+using System.Text;
+using System.Data;
 using System.Windows.Forms;
+using System.Security.Permissions;
 
 namespace gridview;
 
 public partial class Form1 : Form
 {
     private BindingSource bindingSource = new BindingSource();
-
+    private int id = 1;
+    DataTable dataTable;
+    DataGridView dataGridView;
     public Form1()
     {
         InitializeComponent();
@@ -39,37 +44,99 @@ public partial class Form1 : Form
         button4.Click += new EventHandler(this.ImportButton_Click);
         Controls.Add(button4);
 
-        var dataTable = new System.Data.DataTable();
-        dataTable.Columns.Add("ID", typeof(int));
-        dataTable.Columns.Add("Imie", typeof(string));
-        dataTable.Columns.Add("Nazwisko", typeof(string));
+        this.dataTable = new System.Data.DataTable();
+        addDataColumns(dataTable);
 
         bindingSource.DataSource = dataTable;
 
-        DataGridView dataGridView = new DataGridView();
+        this.dataGridView = new DataGridView();
         dataGridView.Size = new Size(690, 380);
         dataGridView.DataSource = bindingSource;
+        dataGridView.AllowUserToAddRows = false;
+        dataGridView.AllowUserToDeleteRows = false;
+        dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         Controls.Add(dataGridView);
     }
 
+    private void addDataColumns(System.Data.DataTable dataTable)
+    {
+        Person person = new Person(1, "Jan", "Kowalski");
+        Type type = person.GetType();
+        var properties = type.GetProperties();
+        foreach (var property in properties)
+        {
+            dataTable.Columns.Add(property.Name, typeof(string));
+        }
+    }
     private void DeleteButton_Click(object sender, EventArgs e)
     {
-        MessageBox.Show("Usuwanie");
+        dataGridView.Rows.RemoveAt(dataGridView.SelectedRows[0].Index);
     }
 
     private void AddButton_Click(object sender, EventArgs e)
     {
-        
+        Form2 form2 = new Form2(addRow);
+        form2.Show(); 
+    }
+
+    private void addRow(string name, string surname, string position)
+    {
+        dataTable.Rows.Add(id, name, surname, position);
+        this.id++;
     }
 
     private void ExportButton_Click(object sender, EventArgs e)
     {
-        MessageBox.Show("Eksport");
+        SaveFileDialog saveFileDialog = new SaveFileDialog();
+        saveFileDialog.Filter = "CSV File (*.csv)|*.csv";
+        saveFileDialog.Title = "Save CSV File";
+        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+        {
+            string filePath = saveFileDialog.FileName;
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                sb.Append(column.ColumnName);
+                sb.Append(",");
+            }
+            sb.AppendLine();
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                foreach (var item in row.ItemArray)
+                {
+                    sb.Append(item.ToString());
+                    sb.Append(",");
+                }
+                sb.AppendLine();
+            }
+            File.WriteAllText(filePath, sb.ToString());
+            MessageBox.Show("Data exported successfully!");
+        }
     }
 
     private void ImportButton_Click(object sender, EventArgs e)
     {
-        MessageBox.Show("Import");
+        OpenFileDialog openFileDialog = new OpenFileDialog();
+        openFileDialog.Filter = "CSV File (*.csv)|*.csv";
+        openFileDialog.Title = "Import CSV File";
+        if (openFileDialog.ShowDialog() == DialogResult.OK)
+        {
+            string filePath = openFileDialog.FileName;
+            using (StreamReader reader = new StreamReader(filePath))
+            {
+                reader.ReadLine();
+                while (!reader.EndOfStream)
+                {
+                    string[] data = reader.ReadLine().Split(',');
+                    dataTable.Rows.Add(data[0],data[1],data[2],data[3]);
+                }
+            }
+
+            MessageBox.Show("Data imported successfully!");
+        }
     }
 
 }
