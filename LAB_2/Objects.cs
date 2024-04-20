@@ -18,3 +18,15 @@ public class Disc
         return Model + " " + Capacity;
     }
 }
+
+public class ExternalDevice
+{
+    public string Name { get; }
+    public double Price { get; }
+
+    public ExternalDevice(string name, double price)
+    {
+        Name = name;
+        Price = price;
+    }
+}

@@ -45,7 +45,7 @@ public partial class SummaryForm : Form
 
     private void externalDevices_Click(object? sender, EventArgs e)
     {
-        ExternalPartsForm externalPartsForm = new ExternalPartsForm();
+        ExternalPartsForm externalPartsForm = new ExternalPartsForm(this.updateExternalDevicesPrice);
         externalPartsForm.Show();
     }
 
