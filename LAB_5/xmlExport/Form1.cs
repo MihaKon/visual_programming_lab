@@ -44,7 +44,22 @@ public partial class Form1 : Form
         button4.Click += new EventHandler(this.ImportButton_Click);
         Controls.Add(button4);
 
+        Button button5 = new Button();
+        button5.Text = "Eksport .XML";
+        button5.Location = new Point(360, 390);
+        button5.Size = new Size(160,50);
+        button5.Click += new EventHandler(this.ExportButtonXML_Click);
+        Controls.Add(button5);
+
+        Button button6 = new Button();
+        button6.Text = "Import .XML";
+        button6.Location = new Point(530, 390);
+        button6.Size = new Size(160,50);
+        button6.Click += new EventHandler(this.ImportButtonXML_Click);
+        Controls.Add(button6);
+
         this.dataTable = new System.Data.DataTable();
+        this.dataTable.TableName = "Persons";
         addDataColumns(dataTable);
 
         bindingSource.DataSource = dataTable;
@@ -139,4 +154,29 @@ public partial class Form1 : Form
         }
     }
 
+    private void ExportButtonXML_Click(object sender, EventArgs e)
+    {
+        SaveFileDialog saveFileDialog = new SaveFileDialog();
+        saveFileDialog.Filter = "XML File (*.xml)|*.xml";
+        saveFileDialog.Title = "Save XML File";
+        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+        {
+            string filePath = saveFileDialog.FileName;
+            dataTable.WriteXml(filePath);
+            MessageBox.Show("Data exported successfully!");
+        }
+    }
+
+    private void ImportButtonXML_Click(object sender, EventArgs e)
+    {
+        OpenFileDialog openFileDialog = new OpenFileDialog();
+        openFileDialog.Filter = "XML File (*.xml)|*.xml";
+        openFileDialog.Title = "Import XML File";
+        if (openFileDialog.ShowDialog() == DialogResult.OK)
+        {
+            string filePath = openFileDialog.FileName;
+            dataTable.ReadXml(filePath);
+            MessageBox.Show("Data imported successfully!");
+        }
+    }
 }
