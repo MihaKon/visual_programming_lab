@@ -31,7 +31,7 @@ namespace DataBase
 
         private void button1_Click(object sender, EventArgs e)
         {
-            db.WriteData(textBox1.Text, textBox2.Text);
+            db.WriteData(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text);
             this.Close();
         }
     }

@@ -45,14 +45,18 @@ namespace DataBase
                 MessageBox.Show(dataString, "Users Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        public void WriteData(string name, string surname)
+        public void WriteData(string name, string surname, string semester, string field, string teacher, string city)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO Users (name, surname) VALUES (@Name, @Surname)", connection);
+                SqlCommand command = new SqlCommand("INSERT INTO Users (name, surname, semester, field, teacher, date, city) VALUES (@Name, @Surname, @Semester, @Field, @Teacher, CAST(GETDATE() AS DATE), @City)", connection);
                 command.Parameters.AddWithValue("@Name", name);
                 command.Parameters.AddWithValue("@Surname", surname);
+                command.Parameters.AddWithValue("@Semester", semester);
+                command.Parameters.AddWithValue("@Field", field);
+                command.Parameters.AddWithValue("@Teacher", teacher);
+                command.Parameters.AddWithValue("@City", city);
                 command.ExecuteNonQuery();
             }
         }
